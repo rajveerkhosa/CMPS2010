@@ -1,0 +1,37 @@
+//CMPS 2010
+//Lab 1.2
+//Rajveer Singh Khosa
+//8/24/22
+
+#include <iostream>
+using  namespace std;
+
+int main ()
+{
+    int variable1, variable2;
+        variable1 = 1337;
+        variable2 = 42; 
+    
+    cout << "The first integer is "  << variable1 << endl;    
+    cout << "The second integer is " << variable2 << endl << endl;
+
+    cout << "The sum is " << variable1 + variable2 << endl;
+    cout << "The difference is " << variable1 - variable2 << endl;
+    cout << "The products is " << variable1 * variable2 << endl;
+    cout << "The quotient is " << variable1 / variable2 << " with a remainder of " << variable1 % variable2 << endl << endl;
+    
+    double variable3, variable4;
+        variable3 = 86.7;
+        variable4 = 5.309;
+
+    cout << "The first double is " << variable3 << endl;
+    cout << "The second double is " << variable4 << endl << endl;
+
+    cout << "The sum is " << variable3 + variable4 << endl;
+    cout << "The difference is " << variable3 - variable4 << endl;
+    cout << "The product is " << variable3 * variable4 << endl;
+    cout << "The quotient is " << variable3 / variable4 << endl;
+
+    
+    return 0;
+}
