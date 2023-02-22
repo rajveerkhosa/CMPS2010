@@ -1,0 +1,17 @@
+// CMPS 2010
+// Lab 1.1
+// Rajveer Singh Khosa
+// 8/24/22
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Hello World!" << endl;
+    cout << "My name is Rajveer Khosa" << endl;
+    cout << "My major is Computer Science" << endl;
+    cout << "I am currently a Freshman" << endl;
+
+    return 0;
+}
