@@ -1,0 +1,46 @@
+//CMPS 2010
+//Lab 2.1
+//Rajveer Singh Khosa
+//8/30/22
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string name, occupation, adjective, verb, animal, phrase;
+    double number;
+
+    cout << "Enter a name: ";
+    cin >> name;
+
+    cout << "Enter an occupation ending in -er: ";
+    cin >> occupation;
+
+    cout << "Enter an adjective: ";
+    cin >> adjective;
+
+    cout << "Enter a verb: ";
+    cin >> verb; 
+
+    cout << "Enter a number: ";
+    cin >> number; 
+
+    cout << "Enter an animal (plural): ";
+    cin >> animal;
+
+    cin.ignore();
+    cout << "Enter an excited phrase: ";
+    getline(cin, phrase);
+
+    cout << "This is the tale of " << name << " the " << occupation << '.' << endl;
+    cout << "One magical morning in Ohio, " << name << " felt " << adjective 
+    << "so he decided to " << verb << "." << endl;
+    cout << "But right when he was about to " << verb << " a pack of " << number 
+    << " wild " << animal << "!" << endl;
+    cout << name << " ran way screaming \"" << phrase << "\"!" << endl << endl;
+
+    cout << "THE END" << endl;
+    return 0;
+}
