@@ -1,0 +1,39 @@
+/*CMPS2010
+ * Lab 3-2
+ * Rajveer Khosa
+ * 9/9/22*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+    char oper8r;
+
+    cout << "Please enter an integer: ";
+    cin >> num1;
+    cout << "Please enter another integer: ";
+    cin >> num2;
+    cout << "Please enter a single math operator: ";
+    cin.ignore();
+    oper8r = cin.get();
+
+
+    switch(oper8r)
+    {
+        case '+': cout << num1 << " " << oper8r << " " << num2 << " = " << num1 + num2 << endl;
+                  break;
+        case '-': cout << num1 << " " << oper8r << " " << num2 << " = " << num1 - num2 << endl;
+                  break;
+        case '*': cout << num1 << " " << oper8r << " " << num2 << " = " << num1 * num2 << endl;
+                  break;
+        case '/': cout << num1 << " " << oper8r << " " << num2 << " = " << num1 / num2 << endl;
+                  break;
+        case '%': cout << num1 << " " << oper8r << " " << num2 << " = " << num1 % num2 << endl;
+                  break;
+        default: cout << "You did not enter a valid operator. \n";
+    }
+
+    return 0;
+}
