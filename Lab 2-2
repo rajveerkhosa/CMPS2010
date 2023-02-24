@@ -1,0 +1,38 @@
+//CMPS 2010
+//Lab 2.2
+//Rajveer Khosa
+//8/30/22
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double x;
+
+    cout << "Please enter a decimal number: ";
+    cin >>  x;
+
+    cout << left << setw(15) << "SIN: ";
+    cout << right << setw(15) << sin(x) << endl;
+
+    cout << left << setw(15) << "COSINE: ";
+    cout << right << setw(15) << cos(x) << endl;
+
+    cout << left << setw(15) << "TANGENT: ";
+    cout << right << setw(15) << tan(x) << endl;
+
+    cout << left << setw(15) << "EXPONENT: ";
+    cout << right << setw(15) << exp(x) << endl;
+
+    cout << left << setw(15) << "LOG: ";
+    cout << right << setw(15) << log(x) << endl;
+
+    cout << left << setw(15) << "SQUARE ROOT: ";
+    cout << right << setw(15) << sqrt(x) << endl;
+
+
+    return 0;
+}
