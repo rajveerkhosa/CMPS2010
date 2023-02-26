@@ -1,0 +1,56 @@
+/*CMPS2010
+  Lab 5-1
+  Rajveer Khosa
+  9/21/22 */
+
+#include <iostream>
+#include <cstdio>
+#include <fstream>
+using namespace std;
+
+int main(int argc, char*argv[]){
+
+    char ch; 
+    //user provides input and outflie file names
+    ifstream inputFile;
+    ofstream outputFile;
+
+    //open the files
+    if (argc == 3){ 
+        inputFile.open(argv[1]);
+        outputFile.open(argv[2]);
+    }   
+    else {
+        cout << "USAGE: ./<executable> input_file output_file \n";
+        return 1;
+    }   
+    //if inputfile does not open, return an error.  
+    if (!inputFile){
+        cout << "There was an error reading the file. \n";
+        return 1;
+     }   
+     else {
+        //while loop to get characters
+        while (inputFile.get(ch)){
+            //capitalizes all letters
+            if (islower(ch)){
+                 ch = toupper(ch);  
+            }   
+            //removes all vowels
+            if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U'){
+                continue;
+            }   
+            //replaces all spaces with an underscore character
+            if (ch == ' '){
+                ch = '_';
+            }   
+            //put() the modified character to the ouput file.
+            outputFile.put(ch);  
+        }   
+     }    
+    //close ifstream and ofstream
+    inputFile.close();
+    outputFile.close();
+   
+    return 0;
+}
