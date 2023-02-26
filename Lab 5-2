@@ -1,0 +1,72 @@
+/* CMPS2010
+ * Lab 5-2
+ * Rajveer Khosa
+ * 9/26/22 */
+
+#include <iostream>
+using namespace std;
+
+int num;
+
+void getWholeNumber(int &num);
+bool isPrime(int num);
+void printFactors(int num);
+
+int main(){
+    getWholeNumber(num);
+    isPrime(num);
+    printFactors(num);
+
+    return 0;
+}
+
+
+
+//requests a whole number, validates the input, stroes the value in num
+void getWholeNumber (int &num){ //&num
+    cout << "Please enter a whole number: ";
+
+    //cin.peek() checks if there is a decimal in the input
+    //so no decimal value can be inputed. 
+    while (!(cin >> num) || num < 0 || cin.peek() == '.'){
+           cin.clear();
+           cin.ignore(10000, '\n');
+           cout << "Invalid! A whole number is positive and an integer. \n";
+           cout << "Please enter a whole number again: ";
+    }
+    cout << endl;
+}
+
+
+bool isPrime(int num){
+    if (num == 1 || num == 0){
+        cout << "The number " << num << " is neither prime or composite. \n";
+        return 0;
+    }
+    for (int i = 2; i <= num/2; i++){
+        if ((num % i) == 0){
+            cout << num << " is NOT prime!\n";
+            return false;
+        }
+        else
+        {
+            cout << num << " IS prime. \n";
+            return true;
+        }
+    }
+    return 0;
+}
+
+void printFactors(int num){
+    if (isPrime){
+        cout << "The factors of " << num << " are: \n";
+        for (int i = 1; i <= num; i++){
+            if ((num % i) == 0)
+                cout << i << " ";
+        }
+        cout << endl;
+    }
+    else {
+        cout << "The only factors of " << num << "are 1 and " << num << ".\n";
+    }
+}
