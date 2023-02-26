@@ -1,0 +1,123 @@
+#include <iostream>
+#include <string>
+#include <cstdio>
+using namespace std;
+
+int main()
+{
+    int apples = 20, bananas = 30, oranges = 10, quantity;
+    double applePrice = 0.50, bananaPrice = 1.00, orangePrice = 2.00, total = 0;
+    char option;
+
+    //while char != 4 (
+
+    while (option != '4')
+    {
+        //Displays the shop inventory
+        cout << "Option \t\t\t Price: \n";
+        cout << " 1) Apples: " << apples << "\t\t  .50 \n";
+        cout << " 2) Bananas: " << bananas << "    \t 1.00 \n";
+        cout << " 3) Oranges: " << oranges << "  \t 2.00 \n";
+        cout << " 4) Checkout \n\n";
+
+        cout << "Please choose a lined item: ";
+        cin >> option; cin.clear();
+        cin.ignore(10000, '\n');
+
+        //The input has to be 1-4 for option. 
+        while (option < '1' || option > '4'){
+            cout << "Error. Please enter a valid input. \n";
+            cout << "Please enter a lined item again: ";
+            cin >> option;
+            }
+
+        //Input quantity
+        if (option == '4'){
+            cout << "Going to checkout. \n";
+        }
+        else {
+            cout << "Please enter your desired quantity: ";
+            cin >> quantity; cin.clear();
+            cin.ignore(10000, '\n');
+            cout << endl;
+
+            //Quantity has to be more than 0
+            while (quantity < 0){
+                cout << "ERROR. You must request more than 0 \n";
+                cout << "Please enter a desired quantity agian: ";
+                cin >> quantity;
+                cin >> quantity; cin.clear();
+                cin.ignore(10000, '\n');
+            }
+        }
+
+        //Case options. 
+        switch (option)
+        {
+            case '1': if ((apples - quantity) >= 0){
+                          apples -= quantity;
+                         total = applePrice * quantity;
+                         cout << "There are " << apples;
+                         cout << " apples remaining  \n\n";
+                      }
+                      else if ((apples - quantity) < 0){
+                          while ((apples - quantity) < 0){
+                                cout << "Please enter a valid quantity again: ";
+                                cin >> quantity;
+                                cin >> quantity; cin.clear();
+                                cin.ignore(10000, '\n');
+                          }
+                          apples -= quantity;
+                          cout << "There are " << apples;
+                          cout << " apples remaining. \n\n";
+                      }
+                      break;
+
+            case '2': if ((bananas - quantity) >= 0){
+                          bananas-= quantity;
+                         total = total + (bananaPrice* quantity);
+                         cout << "There are " << bananas;
+                         cout << " bananas remaining  \n\n";
+                      }
+                      else if ((bananas - quantity) < 0){
+                          while ((bananas - quantity) < 0){
+                                cout << "Please enter a valid quantity again: ";
+                                cin >> quantity;
+                                cin >> quantity; cin.clear();
+                                cin.ignore(10000, '\n');
+                          }
+                          bananas -= quantity;
+                          cout << "There are " << bananas;
+                          cout << " bananas remaining. \n\n";
+                      }
+                      break;
+
+            case '3': if ((oranges - quantity) >= 0){
+                          oranges -= quantity;
+                         total = orangePrice* quantity;
+                         cout << "There are " << oranges;
+                         cout << " oranges remaining  \n\n";
+                      }
+                      else if ((oranges- quantity) < 0){
+                          while ((oranges - quantity) < 0){
+                                cout << "Please enter a valid quantity again: ";
+                                cin >> quantity;
+                                cin >> quantity; cin.clear();
+                                cin.ignore(10000, '\n');
+                          }
+                          oranges -= quantity;
+                          cout << "There are " << oranges;
+                          cout << " oranges remaining. \n\n";
+                      }
+                      break;
+
+            case '4': printf("That will be $%.2f", total);
+                      cout << "\nThank you for your purchase. \n";
+                      cout << "Have a nice day. \n";
+                      break;
+
+            default: cout << "Error. Invalid option. \n";
+         }
+    }
+    return 0;
+}
